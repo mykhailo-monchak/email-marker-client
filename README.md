@@ -1,6 +1,6 @@
 # Email Marker API client for Node.js and browser
 
-This is a Email Marker API client for Node.js and browser written in Typescript.
+This is an Email Marker API client for Node.js and browser written in Typescript.
 
 ## Installation
 
