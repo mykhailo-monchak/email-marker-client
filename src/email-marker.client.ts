@@ -1,6 +1,5 @@
 import fetch from 'cross-fetch';
-import { EmailMarkerResponse } from './email-marker.types';
-import { EmailMarkerError } from '.';
+import { EmailMarkerError, EmailMarkerResponse } from '.';
 
 export class EmailMarkerClient {
   constructor(private readonly apiKey: string) {}
