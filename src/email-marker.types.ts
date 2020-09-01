@@ -1,5 +1,7 @@
+export type EmailMarkerResult = 'valid' | 'invalid' | 'unknown';
+
 export interface EmailMarkerResponse {
   success: boolean;
-  result: 'valid' | 'invalid' | 'unknown';
+  result: EmailMarkerResult;
   message: string;
 }
