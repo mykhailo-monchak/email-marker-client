@@ -1,29 +1,19 @@
-import axios from 'axios';
-import { EmailMarkerResult } from './email-marker.types';
-
-const ALL_RESULTS: EmailMarkerResult[] = ['valid', 'invalid', 'unknown', 'processing_error'];
+import fetch from 'cross-fetch';
+import { EmailMarkerResponse } from './email-marker.types';
+import { EmailMarkerError } from '.';
 
 export class EmailMarkerClient {
   constructor(private readonly apiKey: string) {}
 
-  public async verify(email: string): Promise<EmailMarkerResult> {
-    const url = `https://app.emailmarker.com/api/verify?apiKey=${this.apiKey}&email=${encodeURI(email)}`;
-    let status: EmailMarkerResult;
+  public async verify(email: string): Promise<EmailMarkerResponse> {
+    const res: Response = await fetch(
+      `https://app.emailmarker.com/api/verify?apiKey=${this.apiKey}&email=${encodeURI(email)}`,
+    );
 
-    const res = await axios.get<EmailMarkerResponse>(url);
-
-    if (typeof res.data === 'string' || res.status !== 200 || res.statusText !== 'OK') {
-      status = 'processing_error';
+    if (res.ok) {
+      return (await res.json()) as EmailMarkerResponse;
     } else {
-      status = ALL_RESULTS.indexOf(res.data.result) > -1 ? res.data.result : 'processing_error';
+      throw new EmailMarkerError(res);
     }
-
-    return status;
   }
-}
-
-interface EmailMarkerResponse {
-  success: boolean;
-  result: EmailMarkerResult;
-  message: string;
 }

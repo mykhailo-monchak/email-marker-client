@@ -29,7 +29,6 @@
     "postversion": "git push && git push --tags"
   },
   "devDependencies": {
-    "@types/axios": "^0.14.0",
     "@typescript-eslint/eslint-plugin": "^3.7.1",
     "@typescript-eslint/parser": "^3.7.1",
     "eslint": "^7.5.0",
@@ -50,6 +49,6 @@
     }
   },
   "dependencies": {
-    "axios": "^0.19.2"
+    "cross-fetch": "^3.0.5"
   }
 }
