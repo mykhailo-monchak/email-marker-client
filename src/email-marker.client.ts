@@ -6,7 +6,7 @@ export class EmailMarkerClient {
 
   public async verify(email: string): Promise<EmailMarkerResponse> {
     const res: Response = await fetch(
-      `https://app.emailmarker.com/api/verify?apiKey=${this.apiKey}&email=${encodeURI(email)}`,
+      `https://app.emailmarker.com/api/verify?apiKey=${this.apiKey}&email=${encodeURIComponent(email)}`,
     );
 
     if (res.ok) {
