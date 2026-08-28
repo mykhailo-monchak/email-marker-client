@@ -37,4 +37,4 @@ Please read <a href="http://docs.emailmarker.com/" target="_blank">Email Marker 
 
 ## Need Help?
 
-Drop me an email to [Mikhail Monchak](mailto:mikhail.monchak.work@gmail.com)
+Drop me an email to [Mykhailo Monchak](mailto:biz.monchak@gmail.com)
