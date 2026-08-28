@@ -4,8 +4,8 @@
   "description": "Email Marker API client for Node.js and browser",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "repository": "https://github.com/mikhail-monchak/email-marker-client.git",
-  "author": "Mikhail Monchak <mikhail.monchak.work@gmail.com>",
+  "repository": "https://github.com/mykhailo-monchak/email-marker-client.git",
+  "author": "Mykhailo Monchak <biz.monchak@gmail.com>",
   "license": "MIT",
   "keywords": [
     "email",
@@ -52,6 +52,6 @@
     }
   },
   "dependencies": {
-    "cross-fetch": "^3.0.5"
+    "cross-fetch": "^4.1.0"
   }
 }
